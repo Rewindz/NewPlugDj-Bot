@@ -28,14 +28,14 @@ function createMenu(){
 
 function wootClick(){
 	doWoot = !doWoot;
-	if(doWoot)wootButton.innerHTML('<span> Auto-Woot On</span>');
-	else wootButton.innerHTML('<span> Auto-Woot Off</span>');
+	if(doWoot)wootButton.innerHTML = '<span> Auto-Woot On</span>';
+	else wootButton.innerHTML = '<span> Auto-Woot Off</span>';
 }
 
 function echoClick(){
 	doEcho = !doEcho;
-	if(doEcho)echoButton.innerHTML('<span>Echoing On</span>');
-	else echoButton.innerHTML('<span>Echoing Off</span>');
+	if(doEcho)echoButton.innerHTML = '<span>Echoing On</span>';
+	else echoButton.innerHTML = '<span>Echoing Off</span>';
 }
 
 function wootCheck(){
