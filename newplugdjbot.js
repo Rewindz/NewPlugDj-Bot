@@ -53,12 +53,14 @@ function grabClick(){
 
 function wootCheck(){
 	echo("Woot bot checking...");
-	if(!doWoot){
-		echo("Auto-Woot disabled!");
-	}
 	if(API.getMedia().cid != prevSong){
-		echo("Song has changed wooting!");
-		woot();
+		if(!doWoot){
+			echo("Auto-Woot disabled!");
+		}else{
+			echo("Song has changed wooting!");
+			woot();
+		}
+		if(doGrab)grab();
 		prevSong = API.getMedia().cid;
 	}else{
 		echo("Song detected as the same!");
@@ -68,6 +70,10 @@ function wootCheck(){
 function echo(msg){
 	if(!doEcho)return;
 	console.log("REWINDZ PLUGDJ BOT: " + msg);
+}
+
+function grab(){
+	
 }
 
 function woot(){
