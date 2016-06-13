@@ -73,7 +73,7 @@ function echo(msg){
 }
 
 function grab(){
-	
+	$('#grab').click();
 }
 
 function woot(){
