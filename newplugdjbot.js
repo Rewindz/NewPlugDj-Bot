@@ -1,13 +1,14 @@
 //------  PLUG.DJ BOT 2016+ -----//
 //------ BY STEAM ID DEFENDERREWINDZ -----//
 //-- To Do:
-//-- Menu
 //-- Black List/White List
-//-- 
+//-- Farm Mode
+//-- Anti-Bot (Auto-Chatting/Humanizer type thing)
 
 prevSong = "";
 doEcho = true;
 doWoot = true;
+doGrab = false;
 
 function createMenu(){
 	list = $('.list')[2];
@@ -22,8 +23,14 @@ function createMenu(){
 	echoButton.setAttribute('onclick', 'echoClick()');
 	echoButton.innerHTML = '<span>Echoing On</span>';
 	
+	grabButton = document.createElement('div');
+	grabButton.setAttribute('class', 'item');
+	grabButton.setAttribute('onclick', 'grabClick()');
+	grabButton.innerHTML = '<span>Auto-Grab Off</span>';
+	
 	list.appendChild(wootButton);
 	list.appendChild(echoButton);
+	list.appendChild(grabButton);
 }
 
 function wootClick(){
@@ -36,6 +43,12 @@ function echoClick(){
 	doEcho = !doEcho;
 	if(doEcho)echoButton.innerHTML = '<span>Echoing On</span>';
 	else echoButton.innerHTML = '<span>Echoing Off</span>';
+}
+
+function grabClick(){
+	doGrab = !doGrab;
+	if(doGrab)grapButton.innerHTML = '<span>Auto-Grab On</span>';
+	else grabButton.innerHTML = '<span>Auto-Grab Off</span>';
 }
 
 function wootCheck(){
