@@ -13,14 +13,14 @@ function createMenu(){
 	list = $('.list')[2];
 	
 	wootButton = document.createElement('div');
-	wootButton.class = 'item';
-	wootButton.onclick = 'wootClick';
-	wootButton.innerHTML = '<span>Toggle Auto Woot</span>';
+	wootButton.setAttribute('class', 'item');
+	wootButton.setAttribute('onclick', 'wootClick()');
+	wootButton.innerHTML = '<span>Auto-Woot On</span>';
 	
 	echoButton = document.createElement('div');
-	echoButton.class = 'item';
-	echoButton.onclick = 'echoClick';
-	echoButton.innerHTML = '<span>Toggle Echoing</span>';
+	echoButton.setAttribute('class', 'item');
+	echoButton.setAttribute('onclick', 'echoClick()');
+	echoButton.innerHTML = '<span>Echoing On</span>';
 	
 	list.appendChild(wootButton);
 	list.appendChild(echoButton);
@@ -28,10 +28,14 @@ function createMenu(){
 
 function wootClick(){
 	doWoot = !doWoot;
+	if(doWoot)wootButton.innerHTML('<span> Auto-Woot On</span>');
+	else wootButton.innerHTML('<span> Auto-Woot Off</span>');
 }
 
 function echoClick(){
 	doEcho = !doEcho;
+	if(doEcho)echoButton.innerHTML('<span>Echoing On</span>');
+	else echoButton.innerHTML('<span>Echoing Off</span>');
 }
 
 function wootCheck(){
