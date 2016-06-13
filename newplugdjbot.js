@@ -11,7 +11,7 @@ doWoot = true;
 doGrab = false;
 
 function createMenu(){
-	list = $('.list')[2];
+	list = $('#app').children()[3].children[1];
 	
 	wootButton = document.createElement('div');
 	wootButton.setAttribute('class', 'item');
