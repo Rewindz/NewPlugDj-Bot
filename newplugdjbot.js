@@ -46,7 +46,7 @@ function wootClick(){
 	else wootButton.innerHTML = '<span> Auto-Woot Off</span>';
 }
 
-function mehButton(){
+function mehClick(){
 	doMeh = !doMeh;
 	if(!doMeh)mehButton.innerHTML = '<span>Woot</span>';
 	else mehButton.innerHTML = '<span>Meh</span>';
@@ -62,6 +62,10 @@ function grabClick(){
 	doGrab = !doGrab;
 	if(doGrab)grapButton.innerHTML = '<span>Auto-Grab On</span>';
 	else grabButton.innerHTML = '<span>Auto-Grab Off</span>';
+}
+
+function tick(){
+	wootCheck();
 }
 
 function wootCheck(){
@@ -96,4 +100,4 @@ function woot(){
 
 createMenu();
 
-window.setInterval(wootCheck, 5000);
+window.setInterval(tick, 5000);
