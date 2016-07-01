@@ -60,7 +60,7 @@ function echoClick(){
 
 function grabClick(){
 	doGrab = !doGrab;
-	if(doGrab)grapButton.innerHTML = '<span>Auto-Grab On</span>';
+	if(doGrab)grabButton.innerHTML = '<span>Auto-Grab On</span>';
 	else grabButton.innerHTML = '<span>Auto-Grab Off</span>';
 }
 
