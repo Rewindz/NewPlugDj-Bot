@@ -9,6 +9,7 @@ prevSong = "";
 doEcho = true;
 doWoot = true;
 doGrab = false;
+doMeh = false;
 
 function createMenu(){
 	list = $('#app').children()[3].children[1];
@@ -27,8 +28,14 @@ function createMenu(){
 	grabButton.setAttribute('class', 'item');
 	grabButton.setAttribute('onclick', 'grabClick()');
 	grabButton.innerHTML = '<span>Auto-Grab Off</span>';
+
+	mehButton = document.createElement('div');
+	mehButton.setAttribute('class', 'item');
+	mehButton.setAttribute('onclick', 'mehClick()');
+	mehButton.innerHTML = '<span>Woot</span>';
 	
 	list.appendChild(wootButton);
+	list.appendChild(mehButton);
 	list.appendChild(echoButton);
 	list.appendChild(grabButton);
 }
@@ -37,6 +44,12 @@ function wootClick(){
 	doWoot = !doWoot;
 	if(doWoot)wootButton.innerHTML = '<span> Auto-Woot On</span>';
 	else wootButton.innerHTML = '<span> Auto-Woot Off</span>';
+}
+
+function mehButton(){
+	doMeh = !doMeh;
+	if(!doMeh)mehButton.innerHTML = '<span>Woot</span>';
+	else mehButton.innerHTML = '<span>Meh</span>';
 }
 
 function echoClick(){
@@ -77,7 +90,8 @@ function grab(){
 }
 
 function woot(){
-	$('#woot').click();
+	if(!doMeh)$('#woot').click();
+	else $('#meh').click();
 }
 
 createMenu();
